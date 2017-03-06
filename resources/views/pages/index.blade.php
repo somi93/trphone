@@ -2,9 +2,8 @@
 
 @section('content')
     <div class="col-sm-2 sidenav">
-        <p><a href="#">Link</a></p>
-        <p><a href="#">Link</a></p>
-        <p><a href="#">Link</a></p>
+        <p><a href="#"><button class="btn btn-default">Responsive Design</button></a></p>
+        <p><a href="#"><button class="btn btn-default">Adaptive Design</button></a></p>
     </div>
     <div class="col-sm-5 text-left">
         <h2>Horizontal List</h2>
