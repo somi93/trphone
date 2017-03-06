@@ -24,3 +24,7 @@ Route::get('/', function () {
 Route::get('/admin', function () {
     return view('admin/index');
 });
+
+Route::get('/employees', function () {
+    return view('pages/employees');
+});

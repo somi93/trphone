@@ -10,6 +10,13 @@ app.controller('employees', function ($scope, $http, BASE_URL) {
             $scope.employees = response;
         })
 
+    //Fetch employes
+    $scope.getEmployees = function () {
+        $http.get(BASE_URL + 'api/employees')
+            .success(function (response) {
+                $scope.employeejson = response;
+            })
+    }
     //Delete employee
     $scope.delete = function (id) {
         $http.delete(BASE_URL + 'api/employees/' + id)
@@ -53,9 +60,11 @@ app.controller('employees', function ($scope, $http, BASE_URL) {
             method: 'POST',
             data: $.param($scope.newEmployee),
             headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }).success(function (response) {
+        }).then(function mySucces(response) {
             window.location.reload();
-        })
+        }, function myError(response) {
+            $scope.insertError = response.status;
+        });
     }
 
 })
